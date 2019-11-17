@@ -84,7 +84,7 @@ public class MediaProcessTask {
         if(!"success".equals(tsResult)){
             //处理失败
             mediaFile.setProcessStatus("303003");
-            //定义失败的原因
+            // 定义失败的原因
             MediaFileProcess_m3u8 mediaFileProcess_m3u8 = new MediaFileProcess_m3u8();
             mediaFileProcess_m3u8.setErrormsg(tsResult);
             mediaFile.setMediaFileProcess_m3u8(mediaFileProcess_m3u8);
