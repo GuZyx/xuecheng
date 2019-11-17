@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xuecheng.manage_course.dao.CategoryMapper">
+    <resultMap id="categoryMap" type="com.xuecheng.framework.domain.course.ext.CategoryNode">
+        <id column="a_id" property="id"></id>
+        <result column="a_name" property="name"></result>
+        <collection property="children" ofType="com.xuecheng.framework.domain.course.ext.CategoryNode">
+            <id column="b_id" property="id"></id>
+            <result column="b_name" property="name"></result>
+            <collection property="children" ofType="com.xuecheng.framework.domain.course.ext.CategoryNode">
+                <id column="c_id" property="id"></id>
+                <result column="c_name" property="name"></result>
+            </collection>
+        </collection>
+    </resultMap>
+    <!-- 分类列表 -->
+    <select id="findCategoryList" resultMap="categoryMap">
+        SELECT a.`id` a_id,a.`name` a_name,b.`id` b_id,b.`name` b_name,
+        c.`id` c_id,c.`name` c_name FROM category a
+         LEFT JOIN category b ON b.`parentid` = a.`id`
+         LEFT JOIN category c ON c.`parentid` = b.`id`
+        WHERE a.`parentid` = '0'
+         ORDER BY a.orderby,b.`orderby`,c.`orderby`
+    </select>
+</mapper>
