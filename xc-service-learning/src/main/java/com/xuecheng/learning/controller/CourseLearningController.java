@@ -16,7 +16,7 @@ public class CourseLearningController implements CourseLearningControllerApi {
     @Autowired
     private LearningService learningService;
 
-    @Override   //获取媒资信息并判断是否有权限
+    @Override   // 获取媒资信息并判断是否有权限
     @GetMapping("/getmedia/{courseId}/{teachplanId}")
     public GetMediaResult getMedia(@PathVariable("courseId") String courseId,@PathVariable("teachplanId") String teachplanId) {
         return learningService.getMedia(courseId,teachplanId);
