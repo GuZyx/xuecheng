@@ -1,0 +1,23 @@
+manage = 后台管理
+test-fastdfs		fastdfs的基础应用
+test-freemarker		freemarker的基础应用
+test-rabbitmq-consumer	rabbitmq消费者
+test-rabbitmq-producer	rabbitmq生产者
+xc-framework-common	通用工程(异常处理、返回值对象)
+xc-framework-model	模型工程(实体类和实体拓展类)
+xc-framework-parent	父工程
+xc-framework-utils		工具模块
+xc-govern-center		eurake注册中心
+xc-service-api		API模块
+xc-service-base-filesystem	文件上传模块
+xc-service-learning		学习
+xc-service-manage-cms	服务端cms页面管理
+xc-service-manage-cms-client      rabbitmq监听客户端
+xc-service-manage-course	服务端课程管理
+xc-service-manage-media	服务端媒资管理
+xc-service-search		elasticSearch搜索服务端
+xc-service-manage-media-processor	服务端媒资处理工程
+xc-service-ucenter-auth	集成spring Security框架完成Oauth2认证
+xc-service-ucenter		用户中心工程
+xc-govern-gateway		网关工程
+xc-service-manage-order	服务端订单管理
